@@ -64,5 +64,16 @@ x = 4
 y = 10
 assert planner.gridSafe(nearestNode, x, y, gridMap) == True
 
+## Test the line drawing in the gridSafe method.
+nearestNode = tree.RRTree(8, 8)
+gridMap = grid.Grid(LENGTH)
+assert planner.gridSafe(nearestNode, 12, 10, gridMap) == True
+assert planner.gridSafe(nearestNode, 12, 14, gridMap) == True
+assert planner.gridSafe(nearestNode, 4, 14, gridMap)  == True
+assert planner.gridSafe(nearestNode, 4, 10, gridMap)  == True
+assert planner.gridSafe(nearestNode, 4, 6, gridMap)   == True
+assert planner.gridSafe(nearestNode, 4, 2, gridMap)   == True
+assert planner.gridSafe(nearestNode, 12, 2, gridMap)  == True
+assert planner.gridSafe(nearestNode, 12, 14, gridMap) == True
 
 print("Tests Passed.")
